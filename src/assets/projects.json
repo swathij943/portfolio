@@ -1,0 +1,30 @@
+[
+  {
+    "title": "SCF Console - Dynamic Creation Tool",
+    "description": "Created and rolled out a dynamic form-building system in Angular, enabling complex form creation and reusability across applications, reducing development time.",
+    "tags": ["Angular", "HTML5", "CSS", "TypeScript", "JavaScript", "Dynamic Forms", "Reusable Components"],
+    "link": "https://app-web-scf-modernprod.azurewebsites.net",
+    "image": "assets/scf.PNG"
+  },
+  {
+    "title": "SCF Presenter - Form Consumer Application",
+    "description": "Engineered a form rendering app to consume and render dynamic forms, enabling rapid deployment of form-driven workflows.",
+    "tags": ["Angular", "HTML5", "CSS", "TypeScript", "JavaScript", "Dynamic Forms", "Reusable Components", "UI/UX"],
+    "link": "https://mygs1.gs1ca.org/login?turl=%2Fdefault&backurl=http:%2F%2Fprosync.gs1ca.org%2F&svc=742f432a-7c5d-11e7-a77e-54ab3a836f9b#%2F",
+    "image": "assets/scf2.PNG"
+  },
+  {
+    "title": "ALM - Attribute Lifecycle Management",
+    "description": "Constructed a workflow application that streamlined attribute lifecycle processes, improving efficiency and scalability of enterprise workflows.",
+    "tags": ["Angular", "HTML5", "CSS", "TypeScript", "JavaScript", "Dynamic Forms", "Reusable Components", "Scalability"],
+    "link": "https://func-user-almpre-preprod.azurewebsites.net",
+    "image": "assets/alm.PNG"
+  },
+  {
+    "title": "Employee Reimbursement System",
+    "description": "The Employee Reimbursement System is a full-stack enterprise application designed to streamline the process of submitting, tracking, and approving employee expense reimbursement requests. Instead of manual workflows, employees can log in to submit claims for travel, meals, or other business-related expenses, while managers can review, approve, or reject requests digitally.",
+    "tags": ["React", "TypeScript", "JavaScript", "Java", "SpringBoot", "PostgreSQL", "Full-Stack", "Agile", "TDD, AWS"],
+    "link": " ",
+    "image": "assets/empl.PNG"
+  }
+]

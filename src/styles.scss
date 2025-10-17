@@ -1,0 +1,91 @@
+/* Dark theme (default) */
+:root {
+  --bg: #0f1216;
+  --card: #151a21;
+  --border: #242a33;
+  --text: #e7eaf0;
+  --muted: #9aa3af;
+  --accent: #22d3ee;
+
+  --btn-bg: #12161c;
+  --btn-text: #e7eaf0;
+}
+
+/* Light theme */
+:root.light {
+  --bg: #ffffff;
+  --card: #f4f6f8;
+  --border: #d0d7de;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #0077ff;
+
+  --btn-bg: #f4f6f8;
+  --btn-text: #1f2937;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+       background: var(--bg); color: var(--text); }
+a { color: var(--accent); text-decoration: none; }
+.container { max-width: 1120px; margin: 0 auto; padding: 1.25rem; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 2rem auto;   /* centers the card */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, border 0.3s ease;
+}
+.card h2,
+.card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.grid { display: grid; gap: 1rem; }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .65rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  flex: 1; /* makes main content expand to push footer down */
+  display: block;
+}
+
+.site-footer {
+  margin-top: auto; /* keeps footer pinned to bottom */
+}

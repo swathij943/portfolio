@@ -1,0 +1,12 @@
+<h2 style="margin-bottom: 1.5rem; font-size: 2rem; font-weight: bold;">🚀 My Projects</h2>
+
+<div class="projects-container">
+  <app-project-card *ngFor="let p of projects"
+    [title]="p.title"
+    [description]="p.description"
+    [tags]="p.tags"
+    [link]="p.link"
+    [image]="p.image">
+  </app-project-card>
+</div>
+

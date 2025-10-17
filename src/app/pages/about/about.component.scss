@@ -1,0 +1,139 @@
+/* --- CARD: widen and add comfy padding --- */
+.card.about-me {
+  /* ⬅️ changed: override the narrow .card width only for About */
+  max-width: 1200px !important;          /* previously ~700–900px */
+  width: clamp(720px, 80vw, 1200px);     /* ⬅️ changed: responsive width */
+  margin: 3.5rem auto;                   /* keep balanced vertical rhythm */
+  padding: 2.75rem 3rem;                 /* ⬅️ changed: more inner space */
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Paragraph: wider line length (but still readable) --- */
+.about-paragraph {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  text-align: justify;
+
+  /* ⬅️ changed: relax the width limit and remove forced centering
+     If you prefer even wider paragraphs, set max-width: none; */
+  max-width: 90ch;
+  margin: 0 0 2rem 0;  /* ⬅️ changed: align with card edges */
+}
+
+/* --- Section title under paragraph --- */
+.card.about-me h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* --- Grid: bigger tiles & more breathing room --- */
+.tech-grid {
+  /* ⬅️ changed: larger min tile width + bigger gaps */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem 1.25rem;
+  margin-top: 1rem;
+}
+
+/* --- Tile --- */
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.1rem;                      /* ⬅️ changed: slightly bigger */
+  border-radius: 12px;
+  background: var(--secondary);
+  color: var(--text);
+  font-weight: 500;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+
+    .animated-icon {
+      animation-play-state: running;
+    }
+  }
+
+  /* Icon size – slightly larger so tiles don’t feel cramped */
+  .animated-icon {
+    font-size: 44px;                    /* ⬅️ changed: was ~40px */
+    margin-bottom: 0.6rem;
+    animation: spin 6s linear infinite;
+    animation-play-state: paused;
+  }
+
+  span {
+    font-size: 0.98rem;                 /* ⬅️ changed: a hair larger */
+    text-align: center;
+    letter-spacing: .2px;
+  }
+}
+
+/* --- Desktop: when there’s a lot of room, let’s go even wider --- */
+@media (min-width: 1400px) {
+  .card.about-me {
+    max-width: 1280px;                  /* ⬅️ changed: a bit more width */
+    padding: 3rem 3.25rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* ⬅️ changed */
+    gap: 1.5rem;
+  }
+
+  .tech-item .animated-icon {
+    font-size: 48px;                    /* ⬅️ changed */
+  }
+}
+
+/* --- Tablet tweaks --- */
+@media (max-width: 900px) {
+  .card.about-me {
+    width: 92vw;                        /* ⬅️ changed: fill more on tablet */
+    padding: 2rem 1.5rem;
+  }
+
+  .about-paragraph {
+    max-width: none;                    /* ⬅️ changed: allow full width */
+  }
+}
+
+/* --- Phone tweaks --- */
+@media (max-width: 600px) {
+  .card.about-me {
+    width: 94vw;
+    padding: 1.5rem 1rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr); /* ⬅️ changed: readable tiles */
+    gap: 0.9rem;
+  }
+
+  .tech-item {
+    padding: 0.9rem;
+  }
+
+  .tech-item .animated-icon {
+    font-size: 36px;
+  }
+}
+
+/* Existing animation */
+@keyframes spin {
+  0%   { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}

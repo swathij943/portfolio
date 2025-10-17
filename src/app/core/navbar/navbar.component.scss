@@ -1,0 +1,118 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0; /* instead of fixed height */
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.brand-photo {
+  width: 220px;   /* bigger photo */
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+}
+
+
+.brand-name {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 1.15rem;   /* larger font */
+  font-weight: 500;     /* semi-bold for better visibility */
+}
+
+.menu a {
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.4rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--accent);
+}
+
+.menu a.active {
+  border-bottom: 2px solid var(--accent);
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social a {
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.social a:hover {
+  color: var(--text);
+}
+
+// button.btn {
+//   background: #fff;       /* white background */
+//   color: #000;            /* black moon icon */
+//   border: 1px solid #000; /* black border for contrast */
+// }
+
+// /* On hover: invert the colors */
+// button.btn:hover {
+//   background: #000;       /* black background */
+//   color: #fff;            /* white icon */
+//   border-color: #000;
+// }
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn .icon {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease;
+  position: absolute;
+}
+
+.theme-toggle-btn .sun {
+  opacity: 1;
+}
+
+.theme-toggle-btn.dark .sun {
+  opacity: 0;
+}
+
+.theme-toggle-btn .moon {
+  opacity: 0;
+}
+
+.theme-toggle-btn.dark .moon {
+  opacity: 1;
+}

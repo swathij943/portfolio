@@ -1,0 +1,18 @@
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  padding: 1rem 0;
+  margin-top: auto; /* important! pushes footer down */
+}
+
+.footer-inner {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  padding: 1.25rem 0;
+  /* On mobile, center; on desktop, spread to edges */
+  justify-content: center;
+}
+@media (min-width: 640px) {
+  .footer-inner { justify-content: space-between; }
+}
+
+.social { display: flex; gap: .9rem; }

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card contact-card">
+    <h2>📩 Contact</h2>
+    <p>
+      Get in touch:
+      <a href="mailto:swathijayasree.01@gmail.com">
+        swathijayasree.01@gmail.com
+      </a>
+    </p>
+
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Name" ngModel required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" ngModel required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Message" ngModel required></textarea>
+      </div>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </div>
+</div>

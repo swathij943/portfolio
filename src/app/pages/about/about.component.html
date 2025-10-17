@@ -1,0 +1,17 @@
+<section class="card about-me">
+  <h2>About Me</h2>
+  <p class="about-paragraph">
+    Result-driven Software Developer with 2 years of experience designing, developing, and deploying scalable web applications.
+    Proficient in JavaScript, Angular, React, TypeScript, Node.js, and Java, with expertise in building secure, user-friendly,
+    and high-performance solutions. Skilled in Agile/Scrum, RESTful APIs, cloud computing (AWS), CI/CD pipelines, and SQL/PostgreSQL.
+    Strong collaborator, problem-solver, and committed to delivering innovative software that enhances customer satisfaction and business value.
+</p>
+
+  <h3>Technologies & Tools</h3>
+  <div class="tech-grid">
+  <div class="tech-item" *ngFor="let tech of techs">
+     <fa-icon *ngIf="tech.icon" [icon]="tech.icon" class="animated-icon"></fa-icon>
+    <span>{{ tech.name }}</span>
+  </div>
+</div>
+</section>

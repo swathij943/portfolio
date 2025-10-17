@@ -1,0 +1,29 @@
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" routerLink="/">
+      <img src="assets/photo1.jpeg" alt="Swathi Jayasree" class="brand-photo">
+        <div class="brand-text">
+        <div class="brand-name">Swathi Jayasree</div>
+        <div class="brand-subtitle">Engineer | Developer</div>
+      </div>
+    </a>
+
+    <nav class="menu">
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/projects" routerLinkActive="active">Projects</a>
+      <a routerLink="/resume" routerLinkActive="active">Resume</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      <!-- <button class="btn" (click)="toggleTheme()">🌓</button> -->
+       <!-- Toggle Theme Button -->
+       <button class="theme-toggle-btn" (click)="toggleTheme()" [class.dark]="isDarkMode">
+  <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path fill="black" d="M12 4.5a1 1 0 0 1 1 1V7a1 1 0 0 1-2 0V5.5a1 1 0 0 1 1-1zm0 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7.07-8.07a1 1 0 0 1 0 1.41l-1.06 1.06a1 1 0 1 1-1.41-1.41l1.06-1.06a1 1 0 0 1 1.41 0zM19.5 11a1 1 0 0 1 0 2H18a1 1 0 1 1 0-2h1.5zM12 17a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V18a1 1 0 0 1 1-1zm-7.07-1.07a1 1 0 0 1 1.41 0l1.06 1.06a1 1 0 1 1-1.41 1.41L4.93 17.34a1 1 0 0 1 0-1.41zM5.5 11a1 1 0 1 1 0 2H4a1 1 0 1 1 0-2h1.5zM6.34 6.34a1 1 0 0 1 1.41 0l1.06 1.06a1 1 0 0 1-1.41 1.41L6.34 7.75a1 1 0 0 1 0-1.41z"/>
+  </svg>
+
+  <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path fill="white" d="M21 12.79A9 9 0 0 1 11.21 3a7 7 0 1 0 9.79 9.79z"/>
+  </svg>
+</button>
+    </nav>
+  </div>
+</header>

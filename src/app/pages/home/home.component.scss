@@ -1,0 +1,137 @@
+/* ---------- Existing hero styles (unchanged) ---------- */
+.card.hero-card {
+  max-width: 1200px !important;
+  width: clamp(720px, 80vw, 1200px);
+  margin: 3rem auto;
+  padding: 3rem 3rem;
+  text-align: center;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  position: relative;        /* ⬅️ needed for confetti overlay */
+  overflow: hidden;          /* tidy */
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin: .25rem 0 .6rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  font-size: 30px;
+}
+
+/* ---------- NEW: clickable name with animated gradient & underline ---------- */
+.hero-name-btn {
+  background: none;
+  border: none;
+  padding: 0 .15rem;
+  cursor: pointer;
+  position: relative;
+  isolation: isolate; /* keeps underline glow neat */
+}
+
+.hero-name {
+  background: linear-gradient(90deg, #22d3ee 0%, #3b82f6 50%, #22d3ee 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  animation: name-sheen 8s linear infinite;
+  position: relative;
+  font-size: 30px;
+}
+
+/* glowing animated underline */
+// .hero-name::after {
+//   content: '';
+//   position: absolute;
+//   left: -4px; right: -4px; bottom: -8px;
+//   height: 10px;
+//   border-radius: 999px;
+//   background: conic-gradient(from 0deg, #22d3ee, #3b82f6, #22d3ee);
+//   filter: blur(10px);
+//   opacity: .55;
+//   animation: underline-spin 8s linear infinite;
+//   z-index: -1; /* behind text */
+// }
+
+@keyframes name-sheen { to { background-position: 200% 0; } }
+@keyframes underline-spin { to { transform: rotate(360deg); } }
+
+/* Friendly little wave */
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2.2s ease-in-out infinite;
+}
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  15%      { transform: rotate(18deg); }
+  30%      { transform: rotate(-10deg); }
+  45%      { transform: rotate(12deg); }
+  60%      { transform: rotate(-6deg); }
+  75%      { transform: rotate(8deg); }
+}
+
+.hero-subtitle {
+  max-width: 75ch;
+  margin: .5rem auto 1.25rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; flex-wrap: wrap; margin-top: .5rem;
+}
+.hero-actions .btn.primary {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #000; font-weight: 600;
+}
+.hero-actions .btn { padding: .8rem 1.25rem;  border-radius: 10px; }
+
+/* ---------- NEW: Confetti overlay & pieces ---------- */
+.confetti-host {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;       /* lets clicks pass through */
+}
+
+.confetti-piece {
+  position: absolute;
+  left: 50%;
+  top: 58%;                   /* roughly near the headline */
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  animation:
+    confetti-flight 900ms ease-out forwards,
+    confetti-rotate 900ms linear forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes confetti-flight {
+  to {
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)));
+    opacity: 0;
+  }
+}
+@keyframes confetti-rotate {
+  to { rotate: var(--r); }
+}
+
+/* ---------- Responsive polish ---------- */
+@media (max-width: 900px) {
+  .card.hero-card { width: 92vw; padding: 2.25rem 1.5rem; }
+  .hero-actions .btn { min-width: 200px; }
+}
+@media (max-width: 600px) {
+  .card.hero-card { width: 94vw; padding: 1.75rem 1rem; }
+  .hero-actions { flex-direction: column; gap: .75rem; }
+  .hero-actions .btn { width: 100%; }
+}
+

@@ -1,0 +1,15 @@
+.projects-container {
+  display: flex;
+  flex-direction: column;  /* stack one below the other */
+  gap: 2rem;
+  padding: 2rem 0;
+  max-width: 800px;        /* optional: keeps cards centered */
+  margin: 0 auto;          /* optional: center align */
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}

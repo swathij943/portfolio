@@ -1,0 +1,79 @@
+.contact-card {
+  max-width: 1200px;           /* ⬅️ Wider modal */
+  width: 100%;
+  margin: 2rem auto;
+  padding: 4rem 6rem;          /* ⬅️ Spacious padding */
+  text-align: left;
+  box-sizing: border-box;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.contact-card p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.contact-card p a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 1.05rem;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+button.btn {
+  display: block;             /* Make button a block-level element */
+  width: 100px;               /* 🎯 Set a fixed width */
+  margin: 0 auto;             /* 🎯 Center horizontally */
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+button.btn:hover {
+  background: transparent;
+  color: var(--accent);
+}
