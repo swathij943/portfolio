@@ -8,23 +8,25 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 })
 export class ContactComponent {
   onSubmit(form: any) {
-    if (form.valid) {
-      emailjs.send(
-        'service_guseapr',   // 👈 from EmailJS dashboard
-        'template_5bb21ip',  // 👈 from EmailJS template
-        {
-          name: form.value.name,       // matches {{name}}
-          email: form.value.email,     // matches {{email}}
-          message: form.value.message  // matches {{message}}
-        },
-        'hBNYRScJg7T0vl5MH'     // 👈 from EmailJS account → API Keys
-      ).then((result: EmailJSResponseStatus) => {
-        alert('✅ Message sent successfully!');
-        form.reset();
-      }, (error) => {
-        console.error('EmailJS Error:', error);
-        alert('❌ Failed to send message. Please try again later.');
-      });
-    }
+    if (!form.valid) return;
+
+    emailjs.send(
+      'service_guseapr',       // service ID
+      'template_5bb21ip',      // template ID
+      {
+        name: form.value.name,
+        email: form.value.email,
+        message: form.value.message
+      },
+      'hBNYRScJg7T0vl5MH'      // key
+    )
+    .then((result: EmailJSResponseStatus) => {
+      alert('✅ Message sent successfully!');
+      form.reset();
+    })
+    .catch((error) => {
+      console.error('EmailJS Error:', error);
+      alert('❌ Failed to send message. Please try again later.');
+    });
   }
 }
